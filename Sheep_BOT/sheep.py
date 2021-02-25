@@ -93,7 +93,6 @@ async def on_message(message):
             '_**ATENÇÃO**, antes de escolher uma classe, '
             'certifique se de ter mudado o seu apelido para o do seu personagem_'
             )
-
         definir_classes = await message.channel.send(embed=classes)
         await definir_classes.add_reaction("😠")
         await definir_classes.add_reaction("🎸")
@@ -116,62 +115,47 @@ async def on_message(message):
         async def on_raw_reaction_add(payload):
             if message.id == id_sheep_msg:
                 if payload.user_id != id_sheep_bot:
-                    
                     guild_id = payload.guild_id
                     guild = discord.utils.find(lambda g : g.id == guild_id, client.guilds)
-
                     member = discord.utils.find(lambda m : m.id == payload.user_id, guild.members)
                     #nome = member.nick
-
 
                     '''if payload.emoji.name == '😠':
                         role = discord.utils.get(guild.roles, name='Bárbaro')
                         await member.edit(nick=member.nick+'😠')
-                    
                     elif payload.emoji.name == '🎸':
                         role = discord.utils.get(guild.roles, name='Bardo')
                         await member.edit(nick=member.nick+'🎸')
-
                     elif payload.emoji.name == '🎃':
                         role = discord.utils.get(guild.roles, name='Bruxo')
                         await member.edit(nick=member.nick+'🎃')
-
                     elif payload.emoji.name == '⛑':
                         role = discord.utils.get(guild.roles, name='Clérigo')
                         await member.edit(nick=member.nick+'⛑')
-
                     elif payload.emoji.name == '🌿':
                         role = discord.utils.get(guild.roles, name='Druida')
                         await member.edit(nick=member.nick+'🌿')
-
                     elif payload.emoji.name == '💥':
                         role = discord.utils.get(guild.roles, name='Feiticeiro')
                         await member.edit(nick=member.nick+'💥')
-
                     elif payload.emoji.name == '🛡':
                         role = discord.utils.get(guild.roles, name='Guerreiro')
                         await member.edit(nick=member.nick+'🛡')
-
                     elif payload.emoji.name == '🗡':
                         role = discord.utils.get(guild.roles, name='Ladino')
                         await member.edit(nick=member.nick+'🗡')
-
                     elif payload.emoji.name == '🧙':
                         role = discord.utils.get(guild.roles, name='Mago')
                         await member.edit(nick=member.nick+'🧙')
-
                     elif payload.emoji.name == '⛩':
                         role = discord.utils.get(guild.roles, name='Monge')
                         await member.edit(nick=member.nick+'⛩')
-
                     elif payload.emoji.name == '⛪':
                         role = discord.utils.get(guild.roles, name='Paladino')
                         await member.edit(nick=member.nick+'⛪')
-
                     elif payload.emoji.name == '🏹':
                         role = discord.utils.get(guild.roles, name='Patrulheiro')
                         await member.edit(nick=member.nick+'🏹')
-
                     elif payload.emoji.name == '🌎':
                         role = discord.utils.get(guild.roles, name='Mestre')
                         await member.edit(nick=member.nick+'🌎')'''
@@ -187,62 +171,48 @@ async def on_message(message):
         async def on_raw_reaction_remove(payload):
             #nome = str(discord.Member.nick)
             if message.id == id_sheep_msg:
-
                 guild_id = payload.guild_id
                 guild = discord.utils.find(lambda g : g.id == guild_id, client.guilds)
-
                 member = discord.utils.find(lambda m : m.id == payload.user_id, guild.members)
-
                 '''nome = member.nick'''
                 # Foi retirado o nick (na real nao sei, mas esta dando nonetype)
+                
                 if payload.emoji.name == '😠':
                     role = discord.utils.get(guild.roles, name='Bárbaro')
                     await member.edit(nick=nome.replace("😠",""))
-
                 elif payload.emoji.name == '🎸':
                     role = discord.utils.get(guild.roles, name='Bardo')
                     await member.edit(nick=nome.replace("🎸",""))
-
                 elif payload.emoji.name == '🎃':
                     role = discord.utils.get(guild.roles, name='Bruxo')
                     await member.edit(nick=nome.replace("🎃",""))
-
                 elif payload.emoji.name == '⛑':
                     role = discord.utils.get(guild.roles, name='Clérigo')
                     await member.edit(nick=nome.replace("⛑",""))
-
                 elif payload.emoji.name == '🌿':
                     role = discord.utils.get(guild.roles, name='Druida')
                     await member.edit(nick=nome.replace("🌿",""))
-
                 elif payload.emoji.name == '💥':
                     role = discord.utils.get(guild.roles, name='Feiticeiro')
                     await member.edit(nick=nome.replace("💥",""))
-
                 elif payload.emoji.name == '🛡':
                     role = discord.utils.get(guild.roles, name='Guerreiro')
                     await member.edit(nick=nome.replace("🛡",""))
-
                 elif payload.emoji.name == '🗡':
                     role = discord.utils.get(guild.roles, name='Ladino')
                     await member.edit(nick=nome.replace("🗡",""))
-
                 elif payload.emoji.name == '🧙':
                     role = discord.utils.get(guild.roles, name='Mago')
                     await member.edit(nick=nome.replace("🧙",""))
-
                 elif payload.emoji.name == '⛩':
                     role = discord.utils.get(guild.roles, name='Monge')
                     await member.edit(nick=nome.replace("⛩",""))
-
                 elif payload.emoji.name == '⛪':
                     role = discord.utils.get(guild.roles, name='Paladino')
                     await member.edit(nick=nome.replace("⛪",""))
-
                 elif payload.emoji.name == '🏹':
                     role = discord.utils.get(guild.roles, name='Patrulheiro')
                     await member.edit(nick=nome.replace("🏹",""))
-
                 elif payload.emoji.name == '🌎':
                     role = discord.utils.get(guild.roles, name='Mestre')
                     await member.edit(nick=nome.replace("🌎",""))
@@ -268,7 +238,4 @@ async def on_message(message):
             'A quantidade de dano extra aumenta conforme você ganha níveis nessa classe, como mostrado na coluna Ataque Furtivo da tabela O Ladino.'
         )
         await message.channel.send(embed=snk_att)
-
-
-
 client.run(token)
