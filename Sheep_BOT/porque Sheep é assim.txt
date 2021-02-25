@@ -1,0 +1,7 @@
+ A principio pensei no Sheep para automatizar a distribuição de cargos numa guilda em que eu participo do discord, é sobre D&D, por conta disso que os cargos padrão do bot são essas classes (Bárbaro, patrullheiro, Guerreiro, etc).
+
+ Como eu não conhecia muito sobre a linguagem (eu estou iniciando em programação), tive que ir atras de tutoriais e foruns na internet, esse é o motivo da estrutura do bot ser bagunçada e seguir uma especie de formula padrão.
+
+ Pretendo mudar esse codigo por inteiro, acrescentando mais funções, além melhorar o design. Outra coisa que pretendo mudar é o fato de que o bot até o momento só funciona em uma guilda especifica.
+
+Por fim, esse é o meu querido bot.
