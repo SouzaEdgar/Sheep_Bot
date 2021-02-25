@@ -7,7 +7,7 @@ import sheep_run
 from discord.ext import commands
 
 #client = discord.Client()
-token = sheep_run.run()
+token = sheep_run.run()                             # Insira aqui o Token do BOT
 client = commands.Bot(command_prefix='!')
 
 msg_id = None
@@ -27,7 +27,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
 
-    id = client.get_guild(sheep_run.guild())
+    id = client.get_guild(sheep_run.guild())            # Insira aqui o ID da guild (a qual o bot esta inserido)
 
     if message.content.lower().startswith('🐑'):
         await message.channel.send(':sheep:')
@@ -41,7 +41,7 @@ async def on_message(message):
 
     if message.content.lower().startswith('oi'):
         await message.channel.send(f'Olá, **{message.author.mention}**')
-        if message.author.id == sheep_run.eu():
+        if message.author.id == sheep_run.eu():                             # Insira aqui o seu ID
             if games == 'League of Legends':
                 await message.channel.send('Não estou podendo conversar, conseguiram feedar uma Yummi ADC')
             elif games == 'Minecraft':
