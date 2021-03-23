@@ -14,9 +14,8 @@ msg_id = None
 msg_user = None
 
 games = random.choice(['League of Legends', 'Minecraft', 'D&D - 5e', 'VALORANT'])
-opiniao = (['Aí é foda..', 'Que fita..', 'Têm que ver isso ai', 'Béééé', 
-'Mesmo sendo um BOT sei que isso ai é coisa de arromb@$*', 'Se olhar bem da pra notar o erro',
-'Humanos, tsc tsc...\n\n\n\nˢᵒ ⁿᵃᵒ ˢᵃᵒ ᵖᶦᵒʳᵉˢ ᑫᵘᵉ ᵉˡᶠᵒˢ...', 'A ideia é boa, pena que é ruim'])
+opiniao = (['Que fita..', 'Têm que ver isso ai', 'Béééé', 
+'Mesmo sendo um BOT sei que isso ai é coisa de arromb@$*', 'Se olhar bem da pra notar o erro', 'A ideia é boa, pena que é ruim'])
 numeros = (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'])
 
 @client.event
@@ -159,7 +158,7 @@ async def on_message(message):
                     elif payload.emoji.name == '🌎':
                         role = discord.utils.get(guild.roles, name='Mestre')
                         await member.edit(nick=member.nick+'🌎')'''
-            # Foi retirado o edit (na real nao sei, mas esta dando nonetype)
+            # Foi retirado o edit (na verdade nao sei, mas esta dando nonetype)
                     if role is not None:
                         if member is not None:
                             await member.add_roles(guild.role)
