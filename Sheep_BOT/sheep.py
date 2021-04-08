@@ -14,8 +14,7 @@ msg_id = None
 msg_user = None
 
 games = random.choice(['League of Legends', 'Minecraft', 'D&D - 5e', 'VALORANT'])
-opiniao = (['Que fita..', 'Têm que ver isso ai', 'Béééé', 
-'Mesmo sendo um BOT sei que isso ai é coisa de arromb@$*', 'Se olhar bem da pra notar o erro', 'A ideia é boa, pena que é ruim'])
+opiniao = (['Que fita..', 'Têm que ver isso ai', 'Béééé', 'Se olhar bem da pra notar o erro', 'A ideia é boa, pena que é ruim'])
 numeros = (['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'])
 
 @client.event
@@ -31,9 +30,6 @@ async def on_message(message):
     if message.content.lower().startswith('🐑'):
         await message.channel.send(':sheep:')
     
-    if message.content.lower().startswith('benjamin'):
-        await message.channel.send('_Ai meu deus_')
-    
     if message.content.lower().startswith('!opinião'):
         await message.channel.purge(limit=1)
         await message.channel.send(random.choice(opiniao))
@@ -47,10 +43,8 @@ async def on_message(message):
                 await message.channel.send('...')
             elif games == 'D&D - 5e':
                 await message.channel.send('Compreendo que se trata de imaginação, mas como alguém consegue andar com 1000po no bolso?')
-            elif games == 'VALORANT':
-                await message.channel.send('O que caral&$# é brocar???')
     
-    if message.content.lower().startswith('!clear'):
+    if message.content.lower().startswith('!clear'):                # Ainda em fase de TESTE
         deletar = 0
         user = message.author.mention
         await message.channel.send(f'{user} deletar quantas mensagens?')
