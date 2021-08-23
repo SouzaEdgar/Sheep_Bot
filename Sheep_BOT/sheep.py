@@ -1,12 +1,8 @@
 import discord
-#import asyncio
 import random
-
-#from discord.ext.commands.converter import RoleConverter
 import sheep_run
 from discord.ext import commands
 
-#client = discord.Client()
 token = sheep_run.run()                             # Insira aqui o Token do BOT
 client = commands.Bot(command_prefix='!')
 
@@ -57,14 +53,12 @@ async def on_message(message):
     if message.content == '!users':
         await message.channel.purge(limit=1)
         await message.channel.send(f'Total de usuários: {id.member_count}')
-        # NoneType no member_count
     
     if message.content.lower().startswith('!d20'):
         maluco = f'{message.author}'
         d20_1 = discord.Embed(
             title=maluco, color= 0xa3fefe, description=f'Seu resultado foi: **{random.randint(1, 20)}**'
         )
-        #d20 = message.channel.send(f'**{message.author.mention}**\nSeu resultado foi: **{random.randint(1, 20)}**')
         await message.channel.purge(limit=1)
         await message.channel.send(embed=d20_1)
 
@@ -111,8 +105,6 @@ async def on_message(message):
                     guild_id = payload.guild_id
                     guild = discord.utils.find(lambda g : g.id == guild_id, client.guilds)
                     member = discord.utils.find(lambda m : m.id == payload.user_id, guild.members)
-                    #nome = member.nick
-
                     '''if payload.emoji.name == '😠':
                         role = discord.utils.get(guild.roles, name='Bárbaro')
                         await member.edit(nick=member.nick+'😠')
@@ -152,7 +144,6 @@ async def on_message(message):
                     elif payload.emoji.name == '🌎':
                         role = discord.utils.get(guild.roles, name='Mestre')
                         await member.edit(nick=member.nick+'🌎')'''
-            # Foi retirado o edit (na verdade nao sei, mas esta dando nonetype)
                     if role is not None:
                         if member is not None:
                             await member.add_roles(guild.role)
@@ -162,13 +153,11 @@ async def on_message(message):
 
         @client.event
         async def on_raw_reaction_remove(payload):
-            #nome = str(discord.Member.nick)
             if message.id == id_sheep_msg:
                 guild_id = payload.guild_id
                 guild = discord.utils.find(lambda g : g.id == guild_id, client.guilds)
                 member = discord.utils.find(lambda m : m.id == payload.user_id, guild.members)
                 '''nome = member.nick'''
-                # Foi retirado o nick (na real nao sei, mas esta dando nonetype)
                 
                 if payload.emoji.name == '😠':
                     role = discord.utils.get(guild.roles, name='Bárbaro')
